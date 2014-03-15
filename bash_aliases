@@ -1,0 +1,21 @@
+alias ll='ls -alF'
+alias la='ls -A'
+alias l='ls -CF'
+alias sc='ruby script/console --irb=pry'
+alias ss='ruby script/server'
+alias t='tailf'
+alias c='ccze -A'
+alias td='tailf /home/fer/src/lci/psp/log/development.log'
+alias tt='tailf /home/fer/src/lci/psp/log/test.log'
+alias rs='touch /home/fer/src/lci/psp/tmp/restart.txt'
+alias g='git'
+alias git='LC_ALL=en_GB.UTF-8 git'
+alias ..='cd ..;'
+alias f='find . -iname'
+alias sv="svn"
+alias ack=ack-grep
+alias nox='xset dpms force off'
+alias tmux='tmux -2 -u '
+alias labrador-start="cd $HOME/.labrador && bundle exec rails s -e production -p 4444"
+alias e='gvim '
+alias lst='ls --sort=time |head -n 1'

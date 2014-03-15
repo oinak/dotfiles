@@ -1,0 +1,42 @@
+[user]
+	name = Fernando Martínez
+	email = fernando.mdelacueva@gmail.com
+[core]
+	editor = gvim
+	excludesfile = ~/.gitignore
+[merge]
+	tool = meld
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	ad = add
+	re = reset
+  df = diff
+  ds = diff --staged
+	l  = log --oneline --decorate
+	lo = log --oneline --graph
+  ls = log --stat
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --branches --remotes
+  pul = pull --ff-only
+  pus = push
+[color]
+	interactive = auto
+	ui = auto
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+[color "diff"]
+	whitespace = red reverse
+	meta = yellow
+	frag = magenta
+	old = red
+	new = green
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
