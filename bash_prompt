@@ -38,13 +38,13 @@ LIGHTNING_BOLT="⚡"
 
 
 function parse_git_branch {
-  branch_pattern="^# On branch ([^${IFS}]*)"
-  remote_pattern_ahead="# Your branch is ahead of"
-  remote_pattern_behind="# Your branch is behind"
-  remote_pattern_ff="# Your branch (.*) can be fast-forwarded."
-  diverge_pattern="# Your branch and (.*) have diverged"
+  branch_pattern="^On branch ([^${IFS}]*)"
+  remote_pattern_ahead="Your branch is ahead of"
+  remote_pattern_behind="Your branch is behind"
+  remote_pattern_ff="Your branch (.*) can be fast-forwarded."
+  diverge_pattern="Your branch and (.*) have diverged"
 
-  git_status="$(git status 2> /dev/null)"
+  git_status="$(LANGUAGE=en_US.UTF-8 git status 2> /dev/null)"
   if [[ ! ${git_status} =~ ${branch_pattern} ]]; then
     # Rebasing?
     toplevel=$(git rev-parse --show-toplevel 2> /dev/null)
@@ -109,12 +109,9 @@ function setWindowTitle {
 }
 
 function set_prompt {
-  [[ -n $HOMEBREW_DEBUG_INSTALL ]] && \
-    homebrew_prompt="${BROWN}Homebrew:${COLOR_NONE} debugging ${HOMEBREW_DEBUG_INSTALL}\n"
-
   git_prompt="$(parse_git_branch)"
 
-  export PS1="${BROWN}\u${COLOR_NONE}@${GREEN}\h ${BLUE}\w${COLOR_NONE} ${git_prompt}${COLOR_NONE}${homebrew_prompt}\$ "
+  export PS1="${BROWN}\u${COLOR_NONE}@${GREEN}\h ${BLUE}\w${COLOR_NONE} ${git_prompt}${COLOR_NONE}\n\$ "
 
   # Domain is stripped from hostname
   case $HOSTNAME in
