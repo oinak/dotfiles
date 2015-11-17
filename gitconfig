@@ -13,15 +13,18 @@
 	br = branch
 	ad = add
 	re = reset
-  df = diff
-  ds = diff --staged
+  	df = diff
+  	ds = diff --staged
 	l  = log --oneline --decorate
 	lo = log --oneline --graph
-  ls = log --stat
+  	ls = log --stat
 	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
 	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --branches --remotes
-  pul = pull --ff-only
-  pus = push
+	pul = pull --ff-only
+	pus = push
+	pur = pull --rebase
+	sub = submodule
+	sup = submodule update
 [color]
 	interactive = auto
 	ui = auto
